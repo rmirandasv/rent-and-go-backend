@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rentals",
+  "info": {
+    "singularName": "rental",
+    "pluralName": "rentals",
+    "displayName": "Rental"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "car": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::car.car"
+    },
+    "start_date": {
+      "type": "datetime",
+      "required": false
+    },
+    "end_date": {
+      "type": "datetime"
+    },
+    "total_payment": {
+      "type": "decimal"
+    },
+    "rental_status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "approved",
+        "in_progress",
+        "completed",
+        "canceled"
+      ],
+      "default": "pending"
+    }
+  }
+}

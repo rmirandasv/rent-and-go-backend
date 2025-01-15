@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cars",
+  "info": {
+    "singularName": "car",
+    "pluralName": "cars",
+    "displayName": "Car",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "model": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::model.model",
+      "inversedBy": "cars"
+    },
+    "year": {
+      "type": "string"
+    },
+    "license_plate": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "is_available": {
+      "type": "boolean",
+      "default": true
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::brand.brand",
+      "inversedBy": "cars"
+    },
+    "price_per_day": {
+      "type": "decimal",
+      "required": true
+    },
+    "featured": {
+      "type": "boolean"
+    }
+  }
+}
