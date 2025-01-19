@@ -1,61 +1,101 @@
-# 🚀 Getting started with Strapi
+# Rent and Go (Backend)
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+Backend for [Rent and Go](https://github.com/rmirandasv/rent-and-go) powered by [Strapi](https://strapi.io).  
 
-### `develop`
+Rent and Go is an open-source car rental web application with a Strapi backend and Next.js frontend.
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+## Key Features
+- Manage brands, car models, vehicles, and rental requests from customers.
+- Google Sign-In for user authentication.
+- User dashboard to manage rental requests and preferences.
 
-```
-npm run develop
-# or
-yarn develop
-```
+## Installation
 
-### `start`
+### Prerequisites
+Make sure you have the following installed on your system:
+- [Node.js](https://nodejs.org/) (v16 or higher is recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+### Steps
 
-```
-npm run start
-# or
-yarn start
-```
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/rmirandasv/rent-and-go-backend.git
+   cd rent-and-go-backend
+   ```
 
-### `build`
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+3. Start the development server:
+   ```bash
+   npm run develop
+   # or
+   yarn develop
+   ```
 
-```
-npm run build
-# or
-yarn build
-```
+   The backend will be available at [http://localhost:1337](http://localhost:1337).
 
-## ⚙️ Deployment
+### Environment Variables
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+Create a `.env` file in the root directory and configure the following variables:
 
-```
-yarn strapi deploy
-```
+```env
+# Server
+HOST=0.0.0.0
+PORT=1337
 
-## 📚 Learn more
+# Secrets
+APP_KEYS=
+API_TOKEN_SALT=
+ADMIN_JWT_SECRET=
+TRANSFER_TOKEN_SALT=
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+# Database
+DATABASE_CLIENT=sqlite
+DATABASE_HOST=
+DATABASE_PORT=
+DATABASE_NAME=
+DATABASE_USERNAME=
+DATABASE_PASSWORD=
+DATABASE_SSL=false
+DATABASE_FILENAME=./route-ro-you-db.sqlite
+JWT_SECRET=
+```  
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+For advanced configurations, see the [Strapi Environment Configuration Guide](https://docs.strapi.io/dev-docs/configurations).
 
-## ✨ Community
+## Database Configuration
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+By default, this application uses SQLite for the database. You can configure a different database (e.g., PostgreSQL, MySQL) by following these steps:
+
+1. Install the database package:
+   ```bash
+   npm install pg   # For PostgreSQL
+   npm install mysql # For MySQL
+   ```
+
+2. Update the `config/database.js` file with your database credentials. Refer to the official [Strapi Database Configuration Documentation](https://docs.strapi.io/dev-docs/configurations/database).
+
+## Deployment
+
+For deploying this Strapi backend, follow the [official Strapi deployment guide](https://docs.strapi.io/dev-docs/deployment). Some commonly used platforms include:
+- [Heroku](https://www.heroku.com/)
+- [AWS](https://aws.amazon.com/)
+- [DigitalOcean](https://www.digitalocean.com/)
+
+## Links and References
+
+- [Rent and Go Frontend Repository](https://github.com/rmirandasv/rent-and-go)
+- [Strapi Documentation](https://docs.strapi.io/)
+- [Strapi Plugins Marketplace](https://market.strapi.io/)
+- [Customizing Strapi API](https://docs.strapi.io/dev-docs/plugins-and-customization/routes)
 
 ---
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+Feel free to contribute to this project by creating issues or submitting pull requests. Happy coding!
+
